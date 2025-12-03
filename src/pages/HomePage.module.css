@@ -1,0 +1,805 @@
+.homePage {
+  padding: var(--space-xl) 0;
+  min-height: calc(100vh - 200px);
+}
+
+/* Roadmap Header */
+.roadmapHeader {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-xl);
+}
+
+.roadmapInfo {
+  flex: 1;
+  min-width: 300px;
+}
+
+.roadmapTitle {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.roadmapDescription {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
+.roadmapStats {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.statCard {
+  background-color: var(--bg-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  min-width: 120px;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+}
+
+.statNumber {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-xs);
+}
+
+.statDone { color: #6ee7b7; }
+.statInProgress { color: #fcd34d; }
+.statNotStarted { color: var(--text-muted); }
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+/* Controls Panel */
+.controlsPanel {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.viewControls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.viewButtons {
+  display: flex;
+  gap: var(--space-xs);
+  background-color: var(--bg-soft);
+  padding: 2px;
+  border-radius: var(--radius-md);
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-base);
+}
+
+.viewButton:hover {
+  background-color: var(--bg-soft);
+  color: var(--color-primary);
+}
+
+.viewButton.active {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+.viewIcon {
+  font-size: var(--text-sm);
+}
+
+.filterControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.filterLabel {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.filterSelect {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  min-width: 150px;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.legendTitle {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.legendItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.legendColor.done {
+  background-color: rgba(52, 211, 153, 0.35);
+  border-color: rgba(52, 211, 153, 0.8);
+}
+
+.legendColor.inProgress {
+  background-color: rgba(251, 191, 36, 0.3);
+  border-color: rgba(251, 191, 36, 0.8);
+}
+
+.legendColor.notStarted {
+  background-color: rgba(148, 163, 184, 0.2);
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+/* Items Container */
+.itemsContainer {
+  margin-bottom: var(--space-xl);
+  position: relative; /* Добавим для позиционирования */
+  min-height: 300px; /* Минимальная высота для центрирования */}
+
+.gridView {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-lg);
+}
+
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.noResults {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+.noResultsIcon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-lg);
+  opacity: 0.65;
+  color: var(--color-primary);
+}
+
+.noResultsIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.noResults h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.noResults p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.resetFilterButton {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+}
+
+.resetFilterButton:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Item Card */
+.itemCard {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base),
+    transform var(--transition-base);
+  color: var(--text-primary);
+}
+
+.itemCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+/* Классы статусов */
+.itemCard.status-done {
+  background-color: rgba(52, 211, 153, 0.12);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.itemCard.status-in_progress {
+  background-color: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.itemCard.status-not_started {
+  background-color: rgba(148, 163, 184, 0.08);
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.status-badge.status-done {
+  background-color: rgba(52, 211, 153, 0.15);
+  color: #a7f3d0;
+}
+
+.status-badge.status-in_progress {
+  background-color: rgba(251, 191, 36, 0.15);
+  color: #fde68a;
+}
+
+.status-badge.status-not_started {
+  background-color: rgba(148, 163, 184, 0.12);
+  color: var(--text-muted);
+}
+
+.status-select.status-done {
+  border-color: rgba(52, 211, 153, 0.6);
+}
+
+.status-select.status-in_progress {
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+.status-select.status-not_started {
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.listCard {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 120px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.cardTitleSection {
+  flex: 1;
+}
+
+.itemLink {
+  display: block;
+  text-decoration: none;
+}
+
+.itemTitle {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  transition: color var(--transition-base);
+}
+
+.itemLink:hover .itemTitle {
+  color: var(--color-primary);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.statusIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.statusText {
+  margin-left: 2px;
+}
+
+.quickActions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.quickStatusButton {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.quickStatusButton:hover {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  transform: rotate(90deg);
+}
+
+.quickStatusButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cardBody {
+  margin-bottom: var(--space-lg);
+}
+
+.itemDescription {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+.notePreview {
+  background-color: rgba(15, 118, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  border-left: 3px solid rgba(96, 165, 250, 0.8);
+}
+
+.notePreviewHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.noteIcon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  color: var(--color-warning);
+}
+
+.noteIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.noteLabel {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.notePreviewText {
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.metaInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.dueDateInfo, .noDueDate, .linksInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+}
+
+.dueDateIcon, .linksIcon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.dueDateIcon svg,
+.linksIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.linksCount {
+  font-weight: var(--font-medium);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.detailsButton {
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.detailsButton:hover {
+  background-color: rgba(96, 165, 250, 0.15);
+}
+
+.statusSelect {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  font-weight: var(--font-medium);
+}
+
+.statusSelect:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+/* Results Info */
+.resultsInfo {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.resultsText {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+}
+
+.progressOverview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background-color: var(--bg-soft);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow) ease;
+}
+
+.progressText {
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+/* Адаптивность для HomePage */
+
+/* Для экранов меньше 1200px */
+@media (max-width: 1200px) {
+  .roadmapHeader {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .roadmapInfo {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .roadmapStats {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .gridView {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Для экранов меньше 992px (планшеты) */
+@media (max-width: 992px) {
+  .viewControls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .filterControls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filterGroup {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .legendItems {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .controlsPanel {
+    padding: var(--space-md);
+  }
+}
+
+/* Для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+  .homePage {
+    padding: var(--space-md) 0;
+  }
+  
+  .roadmapTitle {
+    font-size: var(--text-xl);
+  }
+  
+  .roadmapStats {
+    gap: var(--space-sm);
+  }
+  
+  .statCard {
+    padding: var(--space-md);
+    min-width: 100px;
+  }
+  
+  .statNumber {
+    font-size: var(--text-2xl);
+  }
+  
+  .gridView {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .filterControls {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: stretch;
+  }
+  
+  .filterGroup {
+    min-width: 100%;
+  }
+  
+  .filterSelect {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .legendItems {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .quickActions {
+    align-self: flex-end;
+    margin-top: -40px;
+  }
+  
+  .cardFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+  
+  .metaInfo {
+    justify-content: space-between;
+  }
+  
+  .cardActions {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .listCard {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .resultsInfo {
+    padding: var(--space-md);
+  }
+  
+  .progressOverview {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .progressBar {
+    width: 100%;
+  }
+}
+
+/* Для экранов меньше 480px (маленькие мобильные) */
+@media (max-width: 500px) {
+  .roadmapTitle {
+    font-size: var(--text-lg);
+  }
+  
+  .roadmapStats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .statCard {
+    flex: 1;
+    min-width: calc(50% - var(--space-sm));
+    max-width: calc(50% - var(--space-sm));
+  }
+  
+  .viewButtons {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .viewButton {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .itemCard {
+    padding: var(--space-md);
+  }
+  
+  .itemTitle {
+    font-size: var(--text-base);
+  }
+  
+  .statusBadge {
+    font-size: var(--text-xs);
+    padding: 2px 8px;
+  }
+  
+  .detailsButton {
+    font-size: var(--text-xs);
+    padding: 4px 8px;
+  }
+  
+  .statusSelect {
+    font-size: var(--text-xs);
+    padding: 4px 8px;
+  }
+  
+  .metaInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}

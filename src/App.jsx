@@ -1,35 +1,131 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MapIcon } from "@heroicons/react/24/outline";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import DetailPage from "./pages/DetailPage";
+import styles from "./App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [roadmap, setRoadmap] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [exportHistory, setExportHistory] = useState([]);
+
+  const calculateProgress = (items) => {
+    if (!items || items.length === 0) return 0;
+
+    const doneItems = items.filter((item) => item.status === "done").length;
+    return Math.round((doneItems / items.length) * 100);
+  };
+
+  const handleRoadmapLoaded = (data) => {
+    setRoadmap(data);
+    const newProgress = calculateProgress(data.items);
+    setProgress(newProgress);
+    console.log("Дорожная карта загружена:", data.title);
+  };
+
+  const updateItem = (itemId, updates) => {
+    if (!roadmap) return;
+
+    const updatedItems = roadmap.items.map((item) =>
+      item.id === itemId ? { ...item, ...updates } : item
+    );
+
+    const updatedRoadmap = { ...roadmap, items: updatedItems };
+    setRoadmap(updatedRoadmap);
+
+    const newProgress = calculateProgress(updatedItems);
+    setProgress(newProgress);
+  };
+
+  const handleExport = (fileName) => {
+    setExportHistory((prev) => [
+      ...prev,
+      { fileName, timestamp: new Date().toISOString() },
+    ]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className={styles.app}>
+        <Header
+          roadmap={roadmap}
+          progress={progress}
+          onRoadmapLoaded={handleRoadmapLoaded}
+          onExport={handleExport}
+        />
+
+        <main className={styles.main}>
+          <div className={styles.container}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  roadmap ? (
+                    <HomePage roadmap={roadmap} updateItem={updateItem} />
+                  ) : (
+                    <div className={styles.emptyState}>
+                      <div className={styles.emptyIcon}>
+                        <MapIcon
+                          aria-hidden="true"
+                          className={styles.emptyIconSvg}
+                        />
+                      </div>
+                      <h2 className={styles.emptyTitle}>
+                        Загрузите дорожную карту
+                      </h2>
+                      <p className={styles.emptyText}>
+                        Используйте панель вверху, чтобы импортировать JSON-файл
+                        или создать пример. После загрузки вы сможете отмечать
+                        статусы, вести заметки и отслеживать прогресс.
+                      </p>
+                      <ul className={styles.emptyList}>
+                        <li>
+                          Поддерживаются поля: <code>title</code>,{" "}
+                          <code>description</code>, <code>items[]</code>
+                        </li>
+                        <li>
+                          Каждый пункт должен содержать <code>id</code> и{" "}
+                          <code>title</code>
+                        </li>
+                        <li>
+                          Дополнительно можно указать <code>description</code>,{" "}
+                          <code>links</code>, <code>status</code>,{" "}
+                          <code>dueDate</code>, <code>userNote</code>
+                        </li>
+                      </ul>
+                    </div>
+                  )
+                }
+              />
+              <Route
+                path="/item/:id"
+                element={
+                  <DetailPage roadmap={roadmap} updateItem={updateItem} />
+                }
+              />
+            </Routes>
+          </div>
+        </main>
+
+        <footer className={styles.footer}>
+          <div className={styles.container}>
+            <p>
+              Персональный трекер технологий •{" "}
+              {roadmap ? `${progress}% завершено` : "Загрузите дорожную карту"}
+            </p>
+            {exportHistory.length > 0 && (
+              <p className={styles.exportInfo}>
+                Последний экспорт:{" "}
+                {exportHistory[exportHistory.length - 1].fileName}
+              </p>
+            )}
+          </div>
+        </footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

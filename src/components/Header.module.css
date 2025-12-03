@@ -1,0 +1,453 @@
+.header {
+  background: var(--bg-header);
+  color: var(--text-primary);
+  padding: var(--space-md) 0;
+  box-shadow: var(--shadow-lg);
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: var(--text-xl);
+  margin-bottom: 2px;
+}
+
+.logoTitle {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.logoIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.controlsSection {
+  margin-top: var(--space-sm);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 118, 255, 0.15),
+    rgba(76, 29, 149, 0.15)
+  );
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.loadedState {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.progressContainer {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.progressLabel {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.progressValue {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-success);
+}
+
+.progressBar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa, #c084fc);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow) ease;
+}
+
+.actionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: flex-start;
+  margin-top: var(--space-md);
+}
+
+.exportButtons {
+  display: flex;
+  gap: var(--space-md);
+  flex: 1;
+  min-width: 200px;
+}
+
+.exportButton, .copyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(96, 165, 250, 0.2);
+  color: var(--text-primary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  justify-content: center;
+  font-size: var(--text-sm);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.exportButton:hover, .copyButton:hover {
+  background: rgba(96, 165, 250, 0.35);
+}
+
+.roadmapInfo {
+  flex: 2;
+  min-width: 300px;
+}
+
+.roadmapTitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.roadmapDescription {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+/* Стили для загрузчика */
+.uploadControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.uploaderHeader {
+  text-align: center;
+}
+
+.uploaderHeader h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.uploaderHeader p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.uploaderControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.fileInputLabel {
+  cursor: pointer;
+  position: relative;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileInputButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+}
+
+.fileInputButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.exampleButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(52, 211, 153, 0.15);
+  color: #6ee7b7;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  box-shadow: none;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  cursor: pointer;
+}
+
+.exampleButton:hover {
+  background: rgba(52, 211, 153, 0.25);
+}
+
+.fileRequirements {
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.fileRequirements h4 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-sm);
+}
+
+.fileRequirements ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fileRequirements li {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-xs);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.fileRequirements li:before {
+  content: "•";
+  color: var(--color-success);
+  position: absolute;
+  left: 0;
+}
+
+.fileRequirements code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--text-inverse);
+}
+
+.buttonIconSmall {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.4em;
+  flex-shrink: 0;
+}
+
+.exportButton,
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+@media (max-width: 992px) {
+  .logoSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .logoTitle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .controlsSection {
+    padding: var(--space-md);
+  }
+  
+  .actionsRow {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .exportButtons {
+    width: 100%;
+  }
+  
+  .roadmapInfo {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm) 0;
+  }
+  
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .logo h1 {
+    font-size: var(--text-lg);
+  }
+  
+  .subtitle {
+    font-size: var(--text-xs);
+  }
+  
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logoIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .uploaderControls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .fileInputLabel,
+  .exampleButton {
+    width: 100%;
+  }
+  
+  .fileInputButton,
+  .exampleButton {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-sm);
+  }
+  
+  .loadedState {
+    padding: 0;
+  }
+  
+  .progressContainer {
+    padding: var(--space-sm);
+  }
+  
+  .progressValue {
+    font-size: var(--text-lg);
+  }
+  
+  .exportButton,
+  .copyButton {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-xs);
+  }
+  
+  .buttonIconSmall {
+    width: 1em;
+    height: 1em;
+  }
+  
+  .roadmapTitle {
+    font-size: var(--text-lg);
+  }
+  
+  .roadmapDescription {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: var(--text-base);
+  }
+  
+  .uploaderHeader h3 {
+    font-size: var(--text-lg);
+  }
+  
+  .uploaderHeader p {
+    font-size: var(--text-xs);
+  }
+  
+  .fileRequirements h4 {
+    font-size: var(--text-sm);
+  }
+  
+  .fileRequirements li {
+    font-size: var(--text-xs);
+  }
+  
+  .fileRequirements code {
+    font-size: var(--text-xs);
+    padding: 1px 4px;
+  }
+  
+  .progressLabel {
+    font-size: var(--text-xs);
+  }
+  
+  .exportButtons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .exportButton,
+  .copyButton {
+    width: 100%;
+  }
+}

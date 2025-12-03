@@ -1,0 +1,598 @@
+/* src/pages/DetailPage.module.css */
+.detailPage {
+  padding: var(--space-xl) 0;
+  min-height: calc(100vh - 200px);
+}
+
+.backButton {
+  margin-bottom: var(--space-xl);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-soft);
+  transition: all var(--transition-base);
+}
+
+.backLink:hover {
+  background-color: #1e293b;
+  transform: translateX(-4px);
+}
+
+.detailContent {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.itemHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.itemHeader h1 {
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 300px;
+}
+
+.statusIndicator {
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  border: 2px solid;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.statusIndicator:hover {
+  transform: scale(1.05);
+}
+
+.statusGlyph {
+  width: 18px;
+  height: 18px;
+}
+
+.itemDescription {
+  margin-bottom: var(--space-2xl);
+}
+
+.itemDescription h3 {
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.itemDescription p {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  background-color: var(--bg-soft);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-primary);
+}
+
+.linksSection {
+  margin-bottom: var(--space-2xl);
+}
+
+.linksSection h3 {
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.linkItem {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
+  border-left: 4px solid var(--color-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.linkItem:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+  transform: translateX(4px);
+  color: var(--color-primary-dark);
+}
+
+.controlsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.controlGroup {
+  background-color: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.controlGroup h3 {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.statusControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.statusButton {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  border: 2px solid;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.statusButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.statusButton.active {
+  transform: scale(1.02);
+}
+
+.statusButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.dateControl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dateControl label {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.dateLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dateInput {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  font-size: var(--text-base);
+  background-color: var(--bg-surface);
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.clearButton {
+  align-self: flex-start;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-danger);
+  color: var(--text-inverse);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
+  border: none;
+}
+
+.clearButton:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.notesSection {
+  background-color: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.notesHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.notesHeader h3 {
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.sectionIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+}
+
+.notesActions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.editButton, .saveButton, .cancelButton, .deleteButton {
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
+}
+
+.editButton {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+.editButton:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.saveButton {
+  background-color: var(--color-success);
+  color: var(--text-inverse);
+}
+
+.saveButton:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.cancelButton {
+  background-color: var(--color-warning);
+  color: var(--text-inverse);
+}
+
+.cancelButton:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.deleteButton {
+  background-color: var(--color-danger);
+  color: var(--text-inverse);
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.noteTextarea {
+  width: 100%;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  resize: vertical;
+  min-height: 150px;
+  font-family: inherit;
+}
+
+.noteTextarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.noteDisplay {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  min-height: 150px;
+}
+
+.noteContent {
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  font-family: inherit;
+}
+
+.noNote {
+  color: var(--text-tertiary);
+  font-style: italic;
+  text-align: center;
+  padding: var(--space-xl);
+  margin: 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: var(--text-xl);
+  color: var(--text-secondary);
+}
+
+/* Адаптивность для DetailPage */
+
+/* Для экранов меньше 1200px */
+@media (max-width: 1200px) {
+  .detailContent {
+    padding: var(--space-lg);
+  }
+  
+  .itemHeader h1 {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* Для экранов меньше 992px (планшеты) */
+@media (max-width: 992px) {
+  .detailPage {
+    padding: var(--space-md) 0;
+    min-height: calc(100vh - 180px);
+  }
+  
+  .controlsSection {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .itemHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .itemHeader h1 {
+    min-width: 100%;
+    font-size: var(--text-xl);
+  }
+  
+  .statusIndicator {
+    align-self: flex-start;
+  }
+  
+  .notesHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .notesActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+  .detailContent {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  
+  .itemHeader h1 {
+    font-size: var(--text-lg);
+  }
+  
+  .itemDescription h3,
+  .linksSection h3,
+  .controlGroup h3,
+  .notesHeader h3 {
+    font-size: var(--text-lg);
+  }
+  
+  .statusIndicator {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-xs);
+  }
+  
+  .statusGlyph {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .itemDescription p {
+    padding: var(--space-md);
+    font-size: var(--text-sm);
+  }
+  
+  .linkItem {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-xs);
+  }
+  
+  .statusControls {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .statusButton {
+    flex: 1;
+    min-width: calc(33.333% - 8px);
+    padding: var(--space-sm);
+    font-size: var(--text-xs);
+  }
+  
+  .statusButton svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .dateControl {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .dateLabel {
+    margin-bottom: var(--space-xs);
+  }
+  
+  .dateInput {
+    width: 100%;
+    padding: var(--space-sm);
+  }
+  
+  .clearButton {
+    align-self: flex-end;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-xs);
+  }
+  
+  .editButton,
+  .saveButton,
+  .cancelButton,
+  .deleteButton {
+    min-width: 100px;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-xs);
+  }
+  
+  .noteTextarea {
+    padding: var(--space-md);
+    min-height: 120px;
+    font-size: var(--text-sm);
+  }
+  
+  .noteDisplay {
+    padding: var(--space-md);
+    min-height: 120px;
+  }
+  
+  .noteContent {
+    font-size: var(--text-sm);
+  }
+  
+  .noNote {
+    padding: var(--space-lg);
+    font-size: var(--text-sm);
+  }
+}
+
+/* Для экранов меньше 480px (маленькие мобильные) */
+@media (max-width: 480px) {
+  .detailPage {
+    padding: var(--space-sm) 0;
+  }
+  
+  .backLink {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-sm);
+  }
+  
+  .detailContent {
+    padding: var(--space-sm);
+  }
+  
+  .itemHeader h1 {
+    font-size: var(--text-base);
+  }
+  
+  .statusIndicator {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .statusButton {
+    min-width: calc(50% - 4px);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .statusButton span {
+    display: none;
+  }
+  
+  .statusButton svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .notesActions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .editButton,
+  .saveButton,
+  .cancelButton,
+  .deleteButton {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .sectionIcon {
+    width: 16px;
+    height: 16px;
+  }
+}

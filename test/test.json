@@ -1,0 +1,254 @@
+{
+  "title": "Полный стек веб-разработки 2024",
+  "description": "Комплексная дорожная карта для становления full-stack разработчиком с нуля до продвинутого уровня. Включает фронтенд, бэкенд, базы данных, DevOps и soft skills.",
+  "items": [
+    {
+      "id": "fundamentals-1",
+      "title": "Основы HTML5 и семантическая вёрстка",
+      "description": "Изучение базовых тегов, структуры документа, форм, таблиц. Семантические теги (header, nav, section, article, footer). Валидация HTML, доступность (ARIA).",
+      "links": [
+        "https://developer.mozilla.org/ru/docs/Web/HTML",
+        "https://html5book.ru/html5-semantic-elements/"
+      ],
+      "userNote": "Прошёл курс на HTML Academy. Важно помнить про валидацию через validator.w3.org",
+      "status": "done",
+      "dueDate": "2024-01-15"
+    },
+    {
+      "id": "fundamentals-2",
+      "title": "CSS3: Flexbox, Grid и адаптивная вёрстка",
+      "description": "Современные подходы к вёрстке: Flexbox для одномерных и Grid для двумерных layouts. Медиа-запросы, mobile-first подход, адаптивные изображения.",
+      "links": [
+        "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+        "https://cssgridgarden.com/"
+      ],
+      "userNote": "Grid даётся сложнее, нужно больше практики с комплексными макетами",
+      "status": "in_progress",
+      "dueDate": "2024-02-28"
+    },
+    {
+      "id": "js-basics-1",
+      "title": "JavaScript: основы синтаксиса",
+      "description": "Переменные (let, const), типы данных, операторы, условные конструкции (if/else, switch), циклы (for, while). Функции, область видимости, замыкания.",
+      "links": [
+        "https://learn.javascript.ru/",
+        "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      ],
+      "userNote": "",
+      "status": "done",
+      "dueDate": "2024-01-30"
+    },
+    {
+      "id": "js-basics-2",
+      "title": "ES6+ и современный JavaScript",
+      "description": "Стрелочные функции, шаблонные строки, деструктуризация, операторы spread/rest, модули (import/export). Классы, промисы, async/await.",
+      "links": [
+        "https://es6-features.org/",
+        "https://javascript.info/"
+      ],
+      "userNote": "async/await нужно закрепить на реальных проектах с API",
+      "status": "in_progress",
+      "dueDate": "2024-03-15"
+    },
+    {
+      "id": "frontend-1",
+      "title": "React: основы и компонентный подход",
+      "description": "Создание первого приложения (create-react-app). Компоненты: функциональные и классовые. JSX синтаксис. Пропсы и состояние. Жизненный цикл компонентов.",
+      "links": [
+        "https://reactjs.org/docs/getting-started.html",
+        "https://ru.reactjs.org/"
+      ],
+      "userNote": "Прошёл официальный туториал, сделал todo-приложение",
+      "status": "done",
+      "dueDate": "2024-03-01"
+    },
+    {
+      "id": "frontend-2",
+      "title": "React Hooks и управление состоянием",
+      "description": "Хуки: useState, useEffect, useContext, useReducer, useMemo, useCallback. Кастомные хуки. Управление сложным состоянием (Context API, Redux).",
+      "links": [
+        "https://reactjs.org/docs/hooks-intro.html",
+        "https://usehooks.com/"
+      ],
+      "userNote": "Хорошо разобрался с useState и useEffect. Нужно изучить useContext глубже.",
+      "status": "in_progress",
+      "dueDate": "2024-04-10"
+    },
+    {
+      "id": "frontend-3",
+      "title": "Маршрутизация в React (React Router)",
+      "description": "Настройка маршрутизации для SPA. Динамические маршруты, вложенные маршруты, защищённые маршруты. Хуки useParams, useNavigate, useLocation.",
+      "links": [
+        "https://reactrouter.com/en/main",
+        "https://v5.reactrouter.com/web/guides/quick-start"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-04-25"
+    },
+    {
+      "id": "backend-1",
+      "title": "Node.js и основы серверной разработки",
+      "description": "Установка Node.js, менеджер пакетов npm/yarn. Модульная система CommonJS/ESM. Встроенные модули (fs, path, http). Создание простого HTTP-сервера.",
+      "links": [
+        "https://nodejs.org/en/docs/",
+        "https://nodejsdev.ru/"
+      ],
+      "userNote": "Установил Node 18 LTS. Нужно попрактиковаться с файловой системой.",
+      "status": "in_progress",
+      "dueDate": "2024-03-20"
+    },
+    {
+      "id": "backend-2",
+      "title": "Express.js: фреймворк для веб-приложений",
+      "description": "Создание REST API: роутинг, middleware, обработка запросов. Работа с шаблонизаторами. Организация структуры проекта. Аутентификация (JWT).",
+      "links": [
+        "https://expressjs.com/",
+        "https://expressjs.com/ru/starter/installing.html"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-04-05"
+    },
+    {
+      "id": "database-1",
+      "title": "Базы данных: SQL и PostgreSQL",
+      "description": "Основы реляционных баз данных. Язык SQL: SELECT, INSERT, UPDATE, DELETE. JOIN, индексы, транзакции. Установка и настройка PostgreSQL.",
+      "links": [
+        "https://www.postgresql.org/docs/",
+        "https://www.sql-ex.ru/"
+      ],
+      "userNote": "Прошёл курс по SQL на Stepik. Знаю основы, но нужно больше практики с JOIN.",
+      "status": "done",
+      "dueDate": "2024-02-10"
+    },
+    {
+      "id": "database-2",
+      "title": "ORM: Sequelize для Node.js",
+      "description": "Работа с базой данных через ORM. Модели, миграции, ассоциации (1:1, 1:N, N:M). Запросы через Query Interface. Валидация данных.",
+      "links": [
+        "https://sequelize.org/",
+        "https://sequelize.org/master/manual/getting-started.html"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-04-15"
+    },
+    {
+      "id": "devops-1",
+      "title": "Git и система контроля версий",
+      "description": "Основные команды: init, add, commit, push, pull, clone. Ветвление (branch, merge, rebase). Работа с удалёнными репозиториями (GitHub, GitLab).",
+      "links": [
+        "https://git-scm.com/doc",
+        "https://learngitbranching.js.org/"
+      ],
+      "userNote": "Активно использую в работе. Знаю про merge и rebase, конфликты разрешаю уверенно.",
+      "status": "done",
+      "dueDate": "2024-01-10"
+    },
+    {
+      "id": "devops-2",
+      "title": "Docker: контейнеризация приложений",
+      "description": "Создание Dockerfile для Node.js приложения. Docker Compose для многоконтейнерных приложений. Основные команды: build, run, ps, logs.",
+      "links": [
+        "https://docs.docker.com/",
+        "https://docs.docker.com/get-started/"
+      ],
+      "userNote": "Настроил Docker для локальной разработки с PostgreSQL. Нужно изучить Docker Swarm.",
+      "status": "in_progress",
+      "dueDate": "2024-03-30"
+    },
+    {
+      "id": "testing-1",
+      "title": "Тестирование: Jest и React Testing Library",
+      "description": "Написание unit-тестов для функций и компонентов. Тестирование асинхронного кода. Mock функции и модулей. Тестирование пользовательских взаимодействий.",
+      "links": [
+        "https://jestjs.io/",
+        "https://testing-library.com/docs/react-testing-library/intro/"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-05-01"
+    },
+    {
+      "id": "tools-1",
+      "title": "Сборка проекта: Webpack и Vite",
+      "description": "Конфигурация Webpack для React-приложения. Loaders и plugins. Hot Module Replacement. Современные альтернативы: Vite, Parcel.",
+      "links": [
+        "https://webpack.js.org/concepts/",
+        "https://vitejs.dev/guide/"
+      ],
+      "userNote": "Работал с Create React App, но нужно понять, как настраивать Webpack с нуля.",
+      "status": "not_started",
+      "dueDate": "2024-05-10"
+    },
+    {
+      "id": "tools-2",
+      "title": "TypeScript в React-приложениях",
+      "description": "Типизация компонентов, пропсов и состояния. Generics в React. Типизация хуков и контекста. Интеграция с существующими библиотеками.",
+      "links": [
+        "https://www.typescriptlang.org/docs/",
+        "https://react-typescript-cheatsheet.netlify.app/"
+      ],
+      "userNote": "Начал изучать. Пока сложно с продвинутыми типами, но основы понятны.",
+      "status": "in_progress",
+      "dueDate": "2024-04-30"
+    },
+    {
+      "id": "soft-skills-1",
+      "title": "Система контроля версий в команде",
+      "description": "Git workflow в команде. Code review процесс. Pull request лучшие практики. Git hooks (pre-commit, pre-push). Семантическое версионирование.",
+      "links": [
+        "https://www.atlassian.com/git/tutorials/comparing-workflows",
+        "https://www.conventionalcommits.org/"
+      ],
+      "userNote": "Работал по GitFlow в предыдущем проекте. Нужно попробовать GitHub Flow.",
+      "status": "done",
+      "dueDate": "2024-02-20"
+    },
+    {
+      "id": "soft-skills-2",
+      "title": "Agile методологии и инструменты",
+      "description": "Scrum и Kanban на практике. User stories и story points. Sprint planning и retrospectives. Инструменты: Jira, Trello, Notion.",
+      "links": [
+        "https://www.atlassian.com/agile",
+        "https://www.scrum.org/resources/what-is-scrum"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-05-20"
+    },
+    {
+      "id": "project-1",
+      "title": "Пет-проект: Full-stack приложение",
+      "description": "Создание полноценного приложения с фронтендом на React, бэкендом на Node.js/Express и базой данных PostgreSQL. Деплой на облачной платформе.",
+      "links": [
+        "https://github.com/",
+        "https://render.com/",
+        "https://vercel.com/"
+      ],
+      "userNote": "Планирую сделать трекер привычек с аналитикой. Уже набросал макет в Figma.",
+      "status": "not_started",
+      "dueDate": "2024-06-01"
+    },
+    {
+      "id": "advanced-1",
+      "title": "Оптимизация производительности React",
+      "description": "React.memo, useMemo, useCallback для предотвращения лишних ререндеров. Code splitting (React.lazy, Suspense). Виртуализация списков (react-window).",
+      "links": [
+        "https://reactjs.org/docs/optimizing-performance.html",
+        "https://github.com/bvaughn/react-window"
+      ],
+      "userNote": "",
+      "status": "not_started",
+      "dueDate": "2024-06-15"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "createdAt": "2024-01-01",
+    "totalHours": 500,
+    "difficulty": "advanced",
+    "tags": ["frontend", "backend", "database", "devops", "fullstack"]
+  }
+}
