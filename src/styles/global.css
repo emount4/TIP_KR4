@@ -15,14 +15,12 @@
   --bg-header: #0f172a;
   --bg-secondary: #111827;
   --bg-tertiary: #182235;
-  --bg-card: #121a2b;
 
   /* Текст */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5f5;
   --text-muted: #94a3b8;
   --text-inverse: #0b1220;
-  --text-link: #93c5fd;
 
   /* Границы */
   --border-color: rgba(148, 163, 184, 0.3);
@@ -59,16 +57,10 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.7;
 
-  --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
 
-  /* Контейнер */
-  --max-width: 1120px;
-
-  /* Переходы */
-  --transition-fast: 120ms;
   --transition-base: 200ms;
   --transition-slow: 350ms;
 }
@@ -114,11 +106,6 @@ a {
   text-decoration: none;
   transition: color var(--transition-fast);
 }
-
-a:hover {
-  color: var(--color-primary);
-}
-
 button {
   font-family: inherit;
   cursor: pointer;
@@ -143,21 +130,6 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* .card {
-  background-color: var(--bg-card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
-}
-
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-} */
-
-/* Лёгкий кастомный скроллбар */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

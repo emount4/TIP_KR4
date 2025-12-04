@@ -3,7 +3,6 @@
   min-height: calc(100vh - 200px);
 }
 
-/* Roadmap Header */
 .roadmapHeader {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
@@ -64,7 +63,6 @@
   font-weight: var(--font-medium);
 }
 
-/* Controls Panel */
 .controlsPanel {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
@@ -204,11 +202,11 @@
   border-color: rgba(148, 163, 184, 0.6);
 }
 
-/* Items Container */
 .itemsContainer {
   margin-bottom: var(--space-xl);
-  position: relative; /* Добавим для позиционирования */
-  min-height: 300px; /* Минимальная высота для центрирования */}
+  position: relative; 
+  min-height: 300px; 
+}
 
 .gridView {
   display: grid;
@@ -279,7 +277,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Item Card */
 .itemCard {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
@@ -297,7 +294,6 @@
   border-color: var(--color-primary);
 }
 
-/* Классы статусов */
 .itemCard.status-done {
   background-color: rgba(52, 211, 153, 0.12);
   border-color: rgba(52, 211, 153, 0.4);
@@ -553,7 +549,6 @@
   box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
 }
 
-/* Results Info */
 .resultsInfo {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
@@ -596,9 +591,6 @@
   white-space: nowrap;
 }
 
-/* Адаптивность для HomePage */
-
-/* Для экранов меньше 1200px */
 @media (max-width: 1200px) {
   .roadmapHeader {
     flex-direction: column;
@@ -620,7 +612,6 @@
   }
 }
 
-/* Для экранов меньше 992px (планшеты) */
 @media (max-width: 992px) {
   .viewControls {
     flex-direction: column;
@@ -654,7 +645,6 @@
   }
 }
 
-/* Для экранов меньше 768px (мобильные устройства) */
 @media (max-width: 768px) {
   .homePage {
     padding: var(--space-md) 0;
@@ -747,7 +737,6 @@
   }
 }
 
-/* Для экранов меньше 480px (маленькие мобильные) */
 @media (max-width: 500px) {
   .roadmapTitle {
     font-size: var(--text-lg);

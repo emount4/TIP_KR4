@@ -1,4 +1,3 @@
-/* src/App.module.css */
 .app {
   min-height: 100vh;
   display: flex;
@@ -111,9 +110,7 @@
   font-weight: var(--font-medium);
 }
 
-/* Адаптивность для App */
 
-/* Для экранов меньше 768px (мобильные устройства) */
 @media (max-width: 768px) {
   .main {
     padding: var(--space-md) 0 var(--space-sm);
@@ -157,7 +154,6 @@
   }
 }
 
-/* Для экранов меньше 480px (маленькие мобильные) */
 @media (max-width: 480px) {
   .emptyState {
     padding: var(--space-md);
@@ -181,4 +177,43 @@
   .emptyList li {
     padding-left: var(--space-md);
   }
+}
+
+/* Добавляем стили для кнопок в футере */
+.clearDataButton, .clearHistoryButton {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: var(--text-lg);
+  margin-left: var(--space-sm);
+  padding: 0 var(--space-xs);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.clearDataButton:hover, .clearHistoryButton:hover {
+  background-color: var(--color-danger);
+  color: var(--text-inverse);
+}
+
+/* Дополнительные стили для кнопки загрузки новой карты */
+.loadNewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  margin-top: var(--space-md);
+}
+
+.loadNewButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-warning);
 }

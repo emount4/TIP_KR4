@@ -183,7 +183,6 @@ const HomePage = ({ roadmap, updateItem }) => {
         </div>
       </div>
 
-      {/* Отображение карточек */}
       <div
         className={`${styles.itemsContainer} ${
           viewMode === "grid" ? styles.gridView : styles.listView
@@ -215,7 +214,6 @@ const HomePage = ({ roadmap, updateItem }) => {
                   styles[`status-${item.status}`]
                 } ${viewMode === "list" ? styles.listCard : ""}`}
               >
-                {/* Заголовок карточки */}
                 <div className={styles.cardHeader}>
                   <div className={styles.cardTitleSection}>
                     <Link to={`/item/${item.id}`} className={styles.itemLink}>
@@ -281,7 +279,6 @@ const HomePage = ({ roadmap, updateItem }) => {
                   </div>
                 </div>
 
-                {/* Футер карточки */}
                 <div className={styles.cardFooter}>
                   <div className={styles.metaInfo}>
                     {item.dueDate ? (
@@ -315,7 +312,7 @@ const HomePage = ({ roadmap, updateItem }) => {
                       to={`/item/${item.id}`}
                       className={styles.detailsButton}
                     >
-                      Подробнее →
+                      Подробнее 
                     </Link>
 
                     <select

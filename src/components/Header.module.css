@@ -451,3 +451,40 @@
     width: 100%;
   }
 }
+
+.loadNewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-secondary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-base);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  cursor: pointer;
+  flex: 1;
+  justify-content: center;
+  font-size: var(--text-sm);
+}
+
+.loadNewButton:hover {
+  background: rgba(148, 163, 184, 0.2);
+  color: var(--text-primary);
+  border-color: var(--color-warning);
+}
+
+@media (max-width: 768px) {
+  .exportButtons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .exportButton,
+  .copyButton,
+  .loadNewButton {
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

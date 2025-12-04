@@ -6,11 +6,12 @@ import {
   SparklesIcon,
   ArrowDownTrayIcon,
   DocumentDuplicateIcon,
+  ArrowPathIcon,
 } from "@heroicons/react/24/outline";
 import { exportRoadmap, copyToClipboard } from "../utils/exportUtils";
 import styles from "./Header.module.css";
 
-const Header = ({ roadmap, progress, onRoadmapLoaded, onExport }) => {
+const Header = ({ roadmap, progress, onRoadmapLoaded, onExport, onLoadNew }) => {
   const handleExport = async () => {
     if (!roadmap) {
       alert("Сначала загрузите дорожную карту");
@@ -216,16 +217,19 @@ const Header = ({ roadmap, progress, onRoadmapLoaded, onExport }) => {
                     />
                     Копировать
                   </button>
-                </div>
 
-                {/* <div className={styles.roadmapInfo}>
-                  <h3 className={styles.roadmapTitle}>{roadmap.title}</h3>
-                  {roadmap.description && (
-                    <p className={styles.roadmapDescription}>
-                      {roadmap.description}
-                    </p>
-                  )}
-                </div> */}
+                  <button
+                    onClick={onLoadNew}
+                    className={styles.loadNewButton}
+                    title="Загрузить другую дорожную карту"
+                  >
+                    <ArrowPathIcon
+                      aria-hidden="true"
+                      className={styles.buttonIconSmall}
+                    />
+                    Новая карта
+                  </button>
+                </div>
               </div>
             </div>
           ) : (

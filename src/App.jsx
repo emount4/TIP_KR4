@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MapIcon } from "@heroicons/react/24/outline";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import styles from "./App.module.css";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [roadmap, setRoadmap] = useState(null);
+  const [roadmap, setRoadmap] = useLocalStorage("roadmapTracker", null);
   const [progress, setProgress] = useState(0);
-  const [exportHistory, setExportHistory] = useState([]);
+  const [exportHistory, setExportHistory] = useLocalStorage(
+    "exportHistory",
+    []
+  );
 
   const calculateProgress = (items) => {
     if (!items || items.length === 0) return 0;
@@ -23,6 +27,15 @@ function App() {
     const newProgress = calculateProgress(data.items);
     setProgress(newProgress);
     console.log("Дорожная карта загружена:", data.title);
+  };
+
+  const handleLoadNewRoadmap = () => {
+    if (
+      window.confirm("Загрузить новую дорожную карту? Текущая будет заменена.")
+    ) {
+      setRoadmap(null);
+      setProgress(0);
+    }
   };
 
   const updateItem = (itemId, updates) => {
@@ -46,6 +59,21 @@ function App() {
     ]);
   };
 
+  const clearAllData = () => {
+    if (window.confirm("Удалить все данные? Это действие нельзя отменить.")) {
+      setRoadmap(null);
+      setProgress(0);
+      setExportHistory([]);
+    }
+  };
+
+  useEffect(() => {
+    if (roadmap) {
+      const newProgress = calculateProgress(roadmap.items);
+      setProgress(newProgress);
+    }
+  }, [roadmap]);
+
   return (
     <Router>
       <div className={styles.app}>
@@ -54,6 +82,7 @@ function App() {
           progress={progress}
           onRoadmapLoaded={handleRoadmapLoaded}
           onExport={handleExport}
+          onLoadNew={handleLoadNewRoadmap}
         />
 
         <main className={styles.main}>
@@ -63,7 +92,11 @@ function App() {
                 path="/"
                 element={
                   roadmap ? (
-                    <HomePage roadmap={roadmap} updateItem={updateItem} />
+                    <HomePage
+                      roadmap={roadmap}
+                      updateItem={updateItem}
+                      onLoadNewRoadmap={handleLoadNewRoadmap}
+                    />
                   ) : (
                     <div className={styles.emptyState}>
                       <div className={styles.emptyIcon}>
@@ -114,11 +147,27 @@ function App() {
             <p>
               Персональный трекер технологий •{" "}
               {roadmap ? `${progress}% завершено` : "Загрузите дорожную карту"}
+              {roadmap && (
+                <button
+                  onClick={clearAllData}
+                  className={styles.clearDataButton}
+                  title="Удалить все данные"
+                >
+                  ×
+                </button>
+              )}
             </p>
             {exportHistory.length > 0 && (
               <p className={styles.exportInfo}>
                 Последний экспорт:{" "}
                 {exportHistory[exportHistory.length - 1].fileName}
+                <button
+                  onClick={() => setExportHistory([])}
+                  className={styles.clearHistoryButton}
+                  title="Очистить историю"
+                >
+                  ×
+                </button>
               </p>
             )}
           </div>

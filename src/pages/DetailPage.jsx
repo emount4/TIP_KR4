@@ -109,7 +109,7 @@ const DetailPage = ({ roadmap, updateItem }) => {
     <div className={styles.detailPage}>
       <div className={styles.backButton}>
         <Link to="/" className={styles.backLink}>
-          ← Назад к списку
+           Назад к списку
         </Link>
       </div>
 

@@ -1,4 +1,3 @@
-/* src/pages/DetailPage.module.css */
 .detailPage {
   padding: var(--space-xl) 0;
   min-height: calc(100vh - 200px);
@@ -381,9 +380,6 @@
   color: var(--text-secondary);
 }
 
-/* Адаптивность для DetailPage */
-
-/* Для экранов меньше 1200px */
 @media (max-width: 1200px) {
   .detailContent {
     padding: var(--space-lg);
@@ -394,7 +390,6 @@
   }
 }
 
-/* Для экранов меньше 992px (планшеты) */
 @media (max-width: 992px) {
   .detailPage {
     padding: var(--space-md) 0;
@@ -433,7 +428,6 @@
   }
 }
 
-/* Для экранов меньше 768px (мобильные устройства) */
 @media (max-width: 768px) {
   .detailContent {
     padding: var(--space-md);
@@ -538,7 +532,6 @@
   }
 }
 
-/* Для экранов меньше 480px (маленькие мобильные) */
 @media (max-width: 480px) {
   .detailPage {
     padding: var(--space-sm) 0;
